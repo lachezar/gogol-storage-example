@@ -1,0 +1,57 @@
+name:                gogol-storage-example
+version:             0.1.0.0
+github:              "Github username here/gogol-storage-example"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "Author email here"
+copyright:           "2019 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            App category here
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/Github username here/gogol-storage-example#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- text
+- conduit
+- conduit-extra
+- http-conduit
+- lens
+- resourcet
+- gogol
+- gogol-core
+- gogol-storage
+
+library:
+  source-dirs: src
+
+executables:
+  gogol-storage-example-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gogol-storage-example
+
+tests:
+  gogol-storage-example-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gogol-storage-example
